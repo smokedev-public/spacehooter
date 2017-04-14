@@ -29,6 +29,9 @@ module.exports = class Game extends EventEmitter{
 		// Pixi creates a nested Hierarchie of DisplayObjects and Containers. The stage is just the outermost container
 		this.stage = new PIXI.Container();
 
+		//players list
+		this.playersList = [];
+		
 		// We want a renderer with a transparent background - ideally a WebGL one
 		this.renderer = PIXI.autoDetectRenderer( window.innerWidth, window.innerHeight, {transparent: true}, false );
 
@@ -83,6 +86,7 @@ module.exports = class Game extends EventEmitter{
 		var x = this.renderer.width * ( 0.1 + Math.random() * 0.8 );
 		var y = this.renderer.height * ( 0.1 + Math.random() * 0.8 );
 		this.spaceShips.push( new SpaceShip( this, x, y, name, idRocket ) );
+		this.updatePlayersList();
 	}
 
 	/**
@@ -101,8 +105,38 @@ module.exports = class Game extends EventEmitter{
 				this.spaceShips.splice( i, 1 );
 			}
 		}
+		this.updatePlayersList();
 	}
-
+	
+	/**
+	 * Update the players list
+	 *
+	 *@params none
+	 *
+	 *@private
+	 *@retursn {void}
+	 **/
+	updatePlayersList(){
+		console.log("update list, num players: "+this.playersList.length+" - num ships: "+this.spaceShips.length);
+		for( var i = this.playersList.length-1; i >= 0 ; i-- ) {
+			//remove all texts
+			//console.log("remove: " + i);
+			this.stage.removeChild( this.playersList[i] );
+			this.playersList.splice( this.playersList[i], 1 );
+		}
+		for( var i = 0; i < this.spaceShips.length; i++ ) {
+			//create them new
+			//console.log("add " + i);
+			var playerListText = new PIXI.Text( this.spaceShips[i].name, { font : '14px Arial', fill: this.spaceShips[i].tint, align : 'center' } );
+			playerListText.anchor.x = 0;
+			playerListText.anchor.y = 0.5;
+			playerListText.position.x = 5;
+			playerListText.position.y = 20 + i*15;
+			this.playersList.push(playerListText);
+			this.stage.addChild( playerListText );
+		}
+	}
+	
 	/**
 	 * Called on every frame. Notifies subscribers, updates
 	 * the time and renders the frame
