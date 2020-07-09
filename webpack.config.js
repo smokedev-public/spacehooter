@@ -8,7 +8,7 @@ module.exports = {
 		fs: 'empty'
 	},
 	module: {
-		loaders: [
+		rules: [
 			{
 				test: /\.json$/,
 				include: path.join(__dirname, 'node_modules', 'pixi.js'),

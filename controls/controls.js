@@ -1,7 +1,7 @@
 $(function() {
 
 
-	var DEEPSTREAM_URL = '192.168.0.19:6020';
+	var DEEPSTREAM_URL = '52.42.25.49:6020';
 	var name;
 	var recordName;
 	var moveArea;
@@ -115,6 +115,7 @@ $(function() {
 	// Listen for connection state changes. Deepstream has 11 different connection states,
 	// but we've only got three colors - so we need to normalize things a bit
 	ds.on( 'connectionStateChanged', function( connectionState ){
+		console.log(connectionState);
 		var cssClass;
 
 		if( connectionState === 'ERROR' || connectionState === 'CLOSED' ) {
