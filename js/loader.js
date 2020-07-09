@@ -23,8 +23,8 @@ class Loader{
 
 		// Create the image loader and add the initial assets
 		this._assetLoader = new PIXI.loaders.Loader();
-		this._assetLoader.add( '/img/spaceship-body.png' );
-		this._assetLoader.add( '/img/spaceship-turret.png' );
+		this._assetLoader.add( '/img/plane-body.png' );
+		this._assetLoader.add( '/img/kapi-turret.png' );
 		this._assetLoader.add( '/img/bullet.png' );
 
 		// Add the image sequence for the explosion MovieClip
