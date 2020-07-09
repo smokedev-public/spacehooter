@@ -75,7 +75,7 @@ module.exports = class SpaceShip{
 		this._container.position.y = y;
 
 		// body
-		this._body = PIXI.Sprite.fromImage( '/img/spaceship-body.png' );
+		this._body = PIXI.Sprite.fromImage( '/img/plane-body.png' );
 		this._body.tint = this.tint;
 		this._body.anchor.x = 0.5;
 		this._body.anchor.y = 0.5;
