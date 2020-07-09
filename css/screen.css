@@ -11,4 +11,5 @@ body, html{
 
 body{
 	background: url(../img/90279.jpg);
+	background-size: 100%;
 }

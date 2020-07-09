@@ -134,6 +134,7 @@ body{
 	background-position: center center;
 	opacity: 0.6;
 	background-image: url(img/android-expand.svg);
+	background-size: 100%;
 }
 
 .connection-indicator.red{
