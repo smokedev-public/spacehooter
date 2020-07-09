@@ -63,16 +63,17 @@ body{
 	position: relative;
 }
 
-.overlay input[type=text]{
-    background: #fff;
+.overlay input[type=text]{    
+	background: #fff;
     border: 2px solid #ccc;
-    font-size: 30px;
+    font-size: 18px;
     border-radius: 5px;
     width: 80%;
-    padding: 0 2%;
+    padding: 6px 10px;
     box-sizing: border-box;
     display: block;
     float: left;
+    text-align: center;
 }
 
 .overlay input[type=submit],
