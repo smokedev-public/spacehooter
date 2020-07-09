@@ -25,3 +25,17 @@ body{
     text-align: center;
     top: 50px;
 }
+
+.footer-game{
+    position: absolute;
+    color: #9a9898;
+    font-size: 14px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: monospace;
+    width: 100%;
+    text-align: center;
+    bottom: 5px;
+    right: 10px
+
+}
