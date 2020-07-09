@@ -82,7 +82,7 @@ module.exports = class SpaceShip{
 		this._container.addChild( this._body );
 
 		// turret
-		this._turret = PIXI.Sprite.fromImage( '/img/spaceship-turret.png' );
+		this._turret = PIXI.Sprite.fromImage( '/img/kapi-turret.png' );
 		this._turret.tint = this.tint;
 		this._turret.anchor.x = 0.45;
 		this._turret.anchor.y = 0.6;
